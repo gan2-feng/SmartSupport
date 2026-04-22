@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: smart_support_db
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: langgraph
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  app:
+    build: .
+    container_name: smart_support_app
+    ports:
+      - "80:8501"
+    depends_on:
+      - db
+    environment:
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY}
+      DB_URI: postgresql://postgres:mysecretpassword@db:5432/langgraph
+    volumes:
+      - ./chroma_db:/app/chroma_db
+volumes:
+  postgres_data:

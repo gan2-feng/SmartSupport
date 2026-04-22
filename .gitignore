@@ -1,0 +1,51 @@
+# 虚拟环境
+venv/
+env/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python 环境
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 构建和分发
+build/
+dist/
+*.egg-info/
+
+# 测试覆盖率
+.coverage
+.pytest_cache/
+htmlcov/
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# IDE 配置
+.vscode/
+.idea/
+
+# 敏感配置（非常重要）
+.env
+.env.local
+.env.production
+
+# 项目数据
+chroma_db/
+*.db
+tickets.txt
