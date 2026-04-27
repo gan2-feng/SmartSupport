@@ -20,6 +20,7 @@ services:
     environment:
       DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY}
       DB_URI: postgresql://postgres:mysecretpassword@db:5432/langgraph
+      HF_ENDPOINT: https://hf-mirror.com
     volumes:
       - ./chroma_db:/app/chroma_db
 volumes:
